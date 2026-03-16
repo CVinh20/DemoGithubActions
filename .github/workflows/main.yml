@@ -1,0 +1,19 @@
+name: Đọc file readme
+
+on:
+  push:
+    branches: ["main"]      #Chạy khi có code mới đẩy lên nhánh main
+
+jobs:
+  thuc_hanh_doc_file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Bước 1 - Xin Chào
+        run: echo "Hello HUTECH" #Lệnh in ra màn hình
+
+      - name: Bước 2 - Tải code  
+        uses: actions/checkout@v6 #Robot tự động copy code vào máy ảo
+
+      - name: Bước 3 - Đọc file
+        run: cat README.md
